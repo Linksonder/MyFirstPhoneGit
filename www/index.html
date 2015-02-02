@@ -27,46 +27,46 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" />
+        
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
         <title>Hello World</title>
     </head>
     <body>
         
-       <div data-role="page">
- 
-            <div data-role="header">
-                <h4>StinoApp</h4>
-            </div><!-- /header -->
-
-            <div data-role="content">
-                <p>Hello world</p>
-                
-                 <ul data-role="listview" data-inset="true" data-filter="true">
-                    <li><a href="#">Acura</a></li>
-                    <li><a href="#">Audi</a></li>
-                    <li><a href="#">BMW</a></li>
-                    <li><a href="#">Cadillac</a></li>
-                    <li><a href="#">Ferrari</a></li>
-                </ul>
-                
-                <form>
-                    <label for="slider-0">Input slider:</label>
-                    <input type="range" name="slider" id="slider-0" value="25" min="0" max="100" />
-                </form>
-                
-                <a href="#" data-role="button" data-icon="star">Star button</a>
-                
-                <a href="#" data-role="button" data-icon="star" data-theme="a">Button</a>
-                
-            </div><!-- /content -->
-
-            <div data-role="footer">
-                <h4>My Footer</h4>
-            </div><!-- /footer -->
- 
-        </div><!-- /page -->
+        <div data-role="page" id="page1">
+              <div id="panelPage1" data-role="panel">
+                  <ul data-role="listview">
+                      <li><a href="#">Hier zou je</a></li>
+                      <li><a href="#">ook wat navigatie</a></li>
+                      <li><a href="#">kwijt kunnen.</a></li>
+                  </ul>
+              </div>
+            
+              <div data-role="header">
+                <h1>Welkom op mijn homepage</h1>
+              </div>
+            
+              <div data-role="main" class="ui-content" id="swipert">
+                <p>Dit is pagina 1</p>
+                <a href="#panelPage1" class="ui-btn ui-btn-inline">Open Panel</a>
+              </div>
+            
+              <div data-role="footer">
+                <h1>Footer Text</h1>
+              </div>
+            
+        </div>
+       
+        
+        <script>
+            $("#swipert").on("swiperight",function(){
+                $("#panelPage1").panel("open");
+            });
+        </script>
         
     </body>
 </html>
